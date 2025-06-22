@@ -1,0 +1,16 @@
+# 👉 React / Frontend
+frontend/build/
+*.webmanifest
+
+# 👉 Node / Backend
+backend/node_modules/
+backend/.env
+backend/logs/
+
+# 👉 Common
+node_modules/
+.env
+.DS_Store
+logs/
+dist/
+.vscode/

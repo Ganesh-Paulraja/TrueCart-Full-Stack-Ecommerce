@@ -4,11 +4,13 @@ https://github.com/Ganesh-Paulraja/Full-Stack-Ecommerce-Monolithic
 root --> package.json --> below distcription "type": "module" --> .js is important
 instead of common js moduel system we can use ESM(Ecma script moduel system)
 
-root --> package.json --> scripts --> "Start": "nodemon backend/server.js"
+root --> package.json --> scripts --> 
+"start": "node backend/server.js",
+"dev": "nodemon backend/server.js"
 
 cmds
 root -- npm init -y
-root -- npm i express dotenv nodemon
+root -- npm i express dotenv nodemon mongoose
 
 
 root

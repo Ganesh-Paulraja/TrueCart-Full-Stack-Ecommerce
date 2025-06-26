@@ -27,3 +27,11 @@ error handling
 1. create a custom class
 2. create error handling middle ware 
 3. use next in your controllers
+default error class {
+  nam : "error"
+  message: "youre message"
+  stace: "error location"
+}
+
+handle required filed no data error
+we have to create middleware wraper error handler

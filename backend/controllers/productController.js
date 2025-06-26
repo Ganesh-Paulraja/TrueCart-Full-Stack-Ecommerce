@@ -1,4 +1,5 @@
 import productModel from "../models/productModel.js"
+import HandleError from "../utils/handleError.js"
 
 //Creating Products
 export const createProducts = async (req, res) => {
@@ -19,13 +20,14 @@ export const getAllProducts = async (req, res) => {
 }
 
 // get single product
-export const getSingleProduct = async (req, res) => {
+export const getSingleProduct = async (req, res, next) => {
     const product = await productModel.findById(req.params.id)
     if (!product) {
-        return res.status(500).json({
-            success: false,
-            message: "Product Not Found"
-        })
+        // return res.status(500).json({
+        //     success: false,
+        //     message: "Product Not Found"
+        // })
+        return next(new HandleError("Product Not Found", 404))
     }
     res.status(200).json({
         success: true,
@@ -34,21 +36,17 @@ export const getSingleProduct = async (req, res) => {
 }
 
 //update Product
-export const updateProduct = async (req, res) => {
-    let product = await productModel.findById(req.params.id)
-    if (!product) {
-        return res.status(500).json({
-            success: false,
-            message: "Product Not Found"
-        })
-    }
-    product = await productModel.findByIdAndUpdate(
+export const updateProduct = async (req, res) => {  
+    const product = await productModel.findByIdAndUpdate(
         req.params.id, 
         req.body, 
         {
             new: true,
             runValidators: true
         })
+    if (!product) {
+        return next(new HandleError("Product Not Found", 404))
+    }
     res.status(200).json({
         success: true,
         product
@@ -58,15 +56,14 @@ export const updateProduct = async (req, res) => {
 //Delete Product
 
 export const deleteProdut = async (req, res) => {
-    let product = await productModel.findById(req.params.id)
+    const product = await productModel.findByIdAndDelete(req.params.id)
     if (!product) {
-        return res.send(200).json({
+        return res.status(200).json({
             success: true,
             message: 'Product not found'
         })
     }
-    product = await productModel.findByIdAndDelete(req.params.id)
-    res.send(200).json({
+    res.status(200).json({
         success: true,
         message: "Product Deleted Successfully"
     }) 

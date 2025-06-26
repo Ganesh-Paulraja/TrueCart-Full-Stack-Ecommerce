@@ -1,13 +1,11 @@
 import express from 'express'
-import { createProducts, getAllProducts, getSingleProduct, updateProduct } from '../controllers/productController.js'
+import { createProducts, deleteProdut, getAllProducts, getSingleProduct, updateProduct } from '../controllers/productController.js'
 
 const router = express.Router()
 
 
 // best practice use Plurels because it's collections
 // router.post('/products', createProducts)
-// router.get('/products', getAllProducts)
-// router.get('/products/:id', getSingleProduct)
 
 router.route('/products')
   .get(getAllProducts)
@@ -16,6 +14,6 @@ router.route('/products')
 router.route('/products/:id')
   .get(getSingleProduct)
   .put(updateProduct)
-  .delete(deleteProduct)
+  .delete(deleteProdut)
 
 export default router

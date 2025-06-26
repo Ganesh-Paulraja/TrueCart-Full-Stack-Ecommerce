@@ -21,3 +21,9 @@ root
   backend
     app.js
     server.js
+
+
+error handling
+1. create a custom class
+2. create error handling middle ware 
+3. use next in your controllers

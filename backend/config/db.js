@@ -6,9 +6,11 @@ export const connectDataBase = () => {
     then((data) => {
         console.log(`MongoDB connected with server ${data.connection.host}`);
         
-    }).
-    catch((error) => {
-        console.log(error);
-        
     })
+    // we are handling this in server.js file 
+    // .
+    // catch((error) => {
+    //     console.log(error);
+        
+    // })
 }

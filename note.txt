@@ -1,0 +1,23 @@
+Merm ecommerce 
+
+  frontened 
+
+  backend
+
+  package.json
+
+
+
+npm init 
+npm install express, dotenv, mongoose, nodemon, 
+
+
+
+type : moduel   replace comon js --> always use .js
+app.js. --> export app or express
+server.js --> import app, dotenv config --> create server
+config fol --> config --> config.env
+before app.listen --> sample get request later delete --> check with postman
+create --> controller and routes --> ProductRoutes.js, productControllers.js, chec with gettAllProducts, getSingleProduct
+
+

@@ -2,7 +2,12 @@ Merm ecommerce
 
   frontened 
 
-  backend
+  backend --> config
+          --> controller
+          --> routes
+          --> models
+          --> utils
+          --> middleware
 
   package.json
 
@@ -12,12 +17,53 @@ npm init
 npm install express, dotenv, mongoose, nodemon, 
 
 
-
 type : moduel   replace comon js --> always use .js
 app.js. --> export app or express
+use capitaize naming for class
+
+
 server.js --> import app, dotenv config --> create server
 config fol --> config --> config.env
-before app.listen --> sample get request later delete --> check with postman
-create --> controller and routes --> ProductRoutes.js, productControllers.js, chec with gettAllProducts, getSingleProduct
+
+before app.listen --> sample get request  --> check with postman --> later delete
+create --> controller and routes folder --> ProductRoutes.js, productControllers.js, chec with gettAllProducts, getSingleProduct
+import router in app.js. --> app.use.router --> check with postman
+
+config --> db.js --> mongoose.connect --> use then() and catch() --> import inside server.js --> run fucntion 
+check --> mogodb compass is ready
+models fol --> productModel.js  --> export
+
+productControllers.js --> use productMode --> async function --> create, getall, getsingle, delete, update products 
+--> check with postman and mongodb compass
+productRoutes.js --> update new changes
+
+bad request error
+utils fol--> HandleError.js --> create HandleError extends Erro(js error class)
+middleware fol --> error.js --> error handling function 
+
+** 
+productController.js --> pass next as an argument
+replace error with --> return next(new HandleError) --> check with postman
+
+try, catch error,  
+--> for avoiding try catch inside async function we are catching all in one function 
+and send to express error handling middleware
+--> works when mongdb failure --> whenever try fails, --> await data, and typing error
+middleware --> handleAsynError.js --> create error handle function and exprot
+productController.js --> wrap all functions with handleAsycError function --> 
 
 
+mongoose required error(validation error) --> check with postman
+server.js -->  const server = app.liten
+process.on('unhandleRejection')
+
+variable not assigned error
+after donenv.config and connectMongodb --> proccess.on('uncaughtException')
+
+mongodb error --> remove some numbers in url
+**
+error.js -->command error.message --> send error.stack as a messge for check error type
+-> now remove and uncommand oldone
+add lines for handle cast error
+
+we will add more error while validation part

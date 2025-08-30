@@ -8,8 +8,10 @@ const PORT = process.env.PORT || 7000
 connectDataBase()
 const server = app.listen(PORT, () => {
     console.log(`Server is running on PORT: ${PORT}`);
-    
 })
+
+
+
 
 // dontenv wrong data error like wrong db url
 process.on('unhandledRejection', (err) => {

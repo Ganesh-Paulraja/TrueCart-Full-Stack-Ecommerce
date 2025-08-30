@@ -14,25 +14,29 @@ Merm ecommerce
 package.json
 
 
+create main folder --> create frontend and backend folder
 
+cd main older
 npm init 
 npm install express, dotenv, mongoose, nodemon, 
 use capitaize naming for class
-
 type : moduel   replace comon js --> always use .js
+
+cd backend --> create app.js and server.js
 app.js. --> export app or express
 
 server.js --> import app, dotenv config --> create server
 config fol --> config.env
+------------------------------------
 
 before app.listen --> sample get request  --> check with postman --> later delete
 create --> controller and routes folder --> ProductRoutes.js, productControllers.js, chec with gettAllProducts, getSingleProduct
 import router in app.js. --> app.use.router --> check with postman
-
+---------------------------
 config --> db.js --> mongoose.connect --> use then() and catch() --> import inside server.js --> run fucntion 
 check --> mogodb compass is ready     
 models fol --> productModel.js  --> export
-
+----------------
 productControllers.js --> use productMode --> async function --> create, getall, getsingle, delete, update products 
 --> check with postman and mongodb compass
 productRoutes.js --> update new changes

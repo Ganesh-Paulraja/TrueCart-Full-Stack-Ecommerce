@@ -2,6 +2,7 @@ import productModel from "../models/productModel.js"
 import HandleError from "../utils/handleError.js"
 import handleAsyncError from "../middleware/handleAsyncError.js"
 
+
 //Creating Products
 export const createProducts = handleAsyncError(async (req, res, next) => {
     const product = await productModel.create(req.body)

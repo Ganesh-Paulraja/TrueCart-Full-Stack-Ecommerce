@@ -17,3 +17,4 @@ router.route('/products/:id')
   .delete(deleteProdut)
 
 export default router
+
